@@ -1,0 +1,42 @@
+/* Layout: crimson heading band and a scrolling schedule of white cards on the left, a sticky riding map on the right.
+   On phones the map pins to the top and the schedule scrolls beneath it. One light look, set deliberately. */
+:root {
+  color-scheme: light;
+  --crimson: #960018;
+  --crimson-deep: #6d0011;
+  --yellow: #fbec5d;
+  --flash: #fdf4a8;
+  --paper: #f4f0ec;
+  --card: #ffffff;
+  --text: #222222;
+  --ink: #333333;
+  --muted: #666666;
+  --link: #e24545;
+  --land-off: #ffffff;
+  --land-off-hover: #fcf1a6;
+  --land-edge: #b9b1a8;
+  --land-context: #ebe6de;
+  --context-edge: #cfc8bd;
+  --label-land: #a79f94;
+  --label-water: #8c9ba5;
+  --water: #dce3e7;
+  --shadow: 0 1px 5px rgb(0 0 0 / 0.14);
+  --font: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --map-h-mobile: 42vh;
+}
+
+/* The artifact viewer adds these; they are repeated here so the page also works opened locally. */
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font: 400 17px/1.55 var(--font);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 48%);
+}

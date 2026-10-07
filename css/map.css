@@ -1,0 +1,130 @@
+/* The riding map: panel, ridings, neighbouring land, labels, visit dots, Back button and pop-up. */
+.aside {
+  box-sizing: border-box;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  height: 100vh;
+  height: 100dvh;
+  padding: 16px 16px 16px 0;
+}
+.map-box {
+  position: relative;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--water);
+  box-shadow: var(--shadow);
+}
+svg { display: block; width: 100%; height: 100%; }
+
+.context-land {
+  fill: var(--land-context);
+  stroke: var(--context-edge);
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.map-labels { pointer-events: none; }
+.map-label {
+  font-family: var(--font);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  fill: var(--label-land);
+  text-anchor: middle;
+}
+.map-label.water { font-style: italic; letter-spacing: 0.06em; fill: var(--label-water); }
+
+.riding {
+  fill: var(--land-off);
+  stroke: var(--land-edge);
+  stroke-width: 0.7px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.riding:hover, .riding.region-hover { fill: var(--land-off-hover); }
+.riding.visited { fill: var(--crimson); stroke: var(--paper); }
+.riding.visited:hover, .riding.visited.region-hover { fill: var(--crimson-deep); }
+.riding.clickable { cursor: pointer; }
+.map-box[data-view="all"] .riding.zoomable { cursor: zoom-in; }
+.riding:focus-visible { stroke: var(--ink); stroke-width: 2.5px; }
+
+.visit-dot {
+  fill: var(--card);
+  stroke: var(--ink);
+  stroke-width: 2.5px;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+.visit-dot:hover { fill: var(--yellow); }
+.visit-dot:focus-visible { stroke: var(--crimson); stroke-width: 3.5px; }
+.riding:focus, .visit-dot:focus { outline: none; }
+
+/* Zoomed in: the Back button sits centred at the top, with the region's name under it. */
+.back-btn {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin-inline: auto;
+  padding: 14px 28px;
+  font: 800 18px/1.2 var(--font);
+  color: var(--text);
+  background: var(--yellow);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 3px 14px rgb(0 0 0 / 0.32);
+  cursor: pointer;
+  animation: back-in 220ms ease-out, back-pulse 1.8s ease-out 300ms infinite;
+}
+.back-btn:hover { background: #f3df3a; animation-play-state: paused; }
+.back-btn:focus-visible { outline: 3px solid var(--crimson); outline-offset: 3px; }
+@keyframes back-in { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes back-pulse {
+  0% { transform: scale(1); box-shadow: 0 3px 14px rgb(0 0 0 / 0.32), 0 0 0 0 rgb(251 236 93 / 0.9); }
+  40% { transform: scale(1.04); }
+  100% { transform: scale(1); box-shadow: 0 3px 14px rgb(0 0 0 / 0.32), 0 0 0 18px rgb(251 236 93 / 0); }
+}
+.view-label {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin-inline: auto;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--crimson);
+  background: var(--card);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.tip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  background: var(--card);
+  border-radius: 6px;
+  padding: 9px 13px 10px;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 0.2);
+  max-width: 260px;
+  display: grid;
+  gap: 2px;
+}
+.tip-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--link);
+}
+.tip-name { font-size: 16px; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.tip-detail { font-size: 13px; color: var(--muted); }
+.tip-detail.visited { color: var(--crimson); font-weight: 700; }

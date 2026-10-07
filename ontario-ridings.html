@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lee Fairclough Tour Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/schedule.css">
+<link rel="stylesheet" href="css/map.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<div class="layout">
+  <main class="log">
+    <header class="banner">
+      <h1>Lee Fairclough Map BETA</h1>
+    </header>
+
+    <div class="log-body">
+      <div class="log-inner">
+        <h2 class="schedule-title">Tour schedule</h2>
+
+        <div id="feed" class="feed">
+          <p class="notice" role="status">Loading visits…</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="aside" aria-label="Riding map">
+    <div class="map-box" id="map-box">
+      <svg id="map" aria-label="Map of Ontario's provincial ridings, with visited ridings in red"></svg>
+      <button type="button" class="back-btn" id="view-back" hidden>← Back to full map</button>
+      <div class="view-label" id="view-label" aria-live="polite" hidden></div>
+      <div class="tip" id="tip" hidden>
+        <span class="tip-label" id="tip-label"></span>
+        <span class="tip-name" id="tip-name"></span>
+        <span class="tip-detail" id="tip-detail"></span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Plain scripts that share globals, so the order matters. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/state.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/data.js"></script>
+<script src="js/log.js"></script>
+<script src="js/map-view.js"></script>
+<script src="js/map-layers.js"></script>
+<script src="js/map-tooltip.js"></script>
+<script src="js/map-draw.js"></script>
+<script src="js/main.js"></script>

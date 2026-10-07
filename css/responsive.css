@@ -1,0 +1,18 @@
+/* Phones: the map pins to the top and the schedule scrolls beneath it. */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .aside {
+    order: -1;
+    z-index: 2;
+    height: var(--map-h-mobile);
+    padding: 10px 16px;
+    background: var(--paper);
+  }
+  .log-body { padding-block: 28px max(48px, 60vh); }
+  .entry { scroll-margin-top: calc(var(--map-h-mobile) + 16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry { transition: none; }
+  .back-btn { animation: none; }
+}
