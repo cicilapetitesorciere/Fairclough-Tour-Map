@@ -1,5 +1,5 @@
 // File locations, and the fixed settings and lists the map is built from.
-const CSV_FILE = 'northern-tour.csv';
+const CSV_FILE = 'tour.csv';
 const BOUNDARIES_FILE = 'ridings.geojson';
 const CONTEXT_FILE = 'context.geojson';
 
