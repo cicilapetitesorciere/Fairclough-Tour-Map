@@ -1,35 +1,47 @@
 // Loads the data files and starts the page.
 async function load() {
-  const get = (url, read, init) => fetch(url, init).then(r => {
+  const getJSON = url => fetch(url).then(r => {
     if (!r.ok) throw new Error(url);
-    return r[read]();
+    return r.json();
   });
-  let geo, csv, contextGeo;
+  let geo, contextGeo;
   try {
-    [geo, csv, contextGeo] = await Promise.all([
-      get(BOUNDARIES_FILE, 'json'),
-      get(CSV_FILE, 'text', { cache: 'no-store' }),
+    [geo, contextGeo] = await Promise.all([
+      getJSON(BOUNDARIES_FILE),
       // The neighbouring provinces and states are decoration, so the page still works without them.
-      get(CONTEXT_FILE, 'json').catch(() => null),
+      getJSON(CONTEXT_FILE).catch(() => null),
     ]);
   } catch {
-    showNotice(
-      `Couldn't load the tour data. If you opened this page straight from your computer, browsers block it from reading the CSV. In this folder, run `,
+    notice.replaceChildren(
+      `Couldn't load the map data. If you opened this page straight from your computer, browsers block it from reading the files. In this folder, run `,
       el('code', {}, 'python3 -m http.server'),
-      ` and open `, el('code', {}, 'http://localhost:8000/ontario-ridings.html'), `.`);
+      ` and open `, el('code', {}, 'http://localhost:8000/'), `.`);
+    notice.hidden = false;
     return;
   }
 
   indexRidings(geo);
-  const visits = readVisits(csv);
-  indexVisits(visits);
-
   drawContext(contextGeo);
   drawRidings();
-  drawDots();
   layout();
-
-  if (visits.length) renderFeed(visits);
-  else showNotice(`No visits in ${CSV_FILE} yet. Add rows with riding_number, date (YYYY-MM-DD) and venue.`);
 }
+
+// Indexes the ridings by number, and works out which region each one belongs to.
+function indexRidings(geo) {
+  features = geo.features;
+  for (const f of features) {
+    const id = f.properties.id;
+    ridingById.set(id, f);
+    const [lon, lat] = d3.geoCentroid(f);
+    const region = Object.keys(REGIONS).find(key => {
+      const { west, east, south, north } = REGIONS[key].box;
+      return lon >= west && lon <= east && lat >= south && lat <= north;
+    });
+    if (region) {
+      regionOf.set(id, region);
+      regionSize.set(region, (regionSize.get(region) ?? 0) + 1);
+    }
+  }
+}
+
 load();

@@ -1,13 +1,10 @@
-// The hover pop-up, and the highlight on a close-up region.
-const tipLabel = document.getElementById('tip-label');
+// The hover pop-up, and the highlight on a region.
 const tipName = document.getElementById('tip-name');
 const tipDetail = document.getElementById('tip-detail');
 
-function showText({ label, name, detail, visited = false }, x, y) {
-  tipLabel.textContent = label;
+function showText(name, detail, x, y) {
   tipName.textContent = name;
   tipDetail.textContent = detail;
-  tipDetail.classList.toggle('visited', visited);
   tip.hidden = false;
   // Below-right of the pointer, flipping to the other side near the panel's edges.
   const [w, h] = mapSize();
@@ -18,24 +15,13 @@ function showText({ label, name, detail, visited = false }, x, y) {
   tip.style.top = Math.max(8, top) + 'px';
 }
 
-// A riding's pop-up. In the full view, a riding in a close-up region describes the region
-// instead, and the whole region lights up.
+// In the full view, a riding in a region describes the whole region, which lights up as one block.
+// Anywhere else it is the riding's own name.
 function showTip(d, x, y) {
-  const id = d.properties.id;
-  const region = view === 'all' ? regionOf.get(id) : undefined;
+  const region = view === 'all' ? regionOf.get(d.properties.id) : undefined;
   lightRegion(region ?? null);
-  if (region) {
-    showText({ label: 'Click to zoom in', name: REGIONS[region].label, detail: `${regionSize.get(region)} ridings` }, x, y);
-    return;
-  }
-  const visits = visitsByRiding.get(id);
-  const dates = visits && [...new Set(visits.map(v => fmtShort.format(v.date)))].join(' · ');
-  showText({ label: 'Riding ' + id, name: d.properties.name, detail: visits ? 'Visited ' + dates : 'No visit recorded', visited: !!visits }, x, y);
-}
-
-function showVisitTip(v, x, y) {
-  const riding = ridingById.get(v.riding)?.properties.name ?? 'Riding ' + v.riding;
-  showText({ label: `${fmtShort.format(v.date)} · ${riding}`, name: v.title || v.town || v.venue, detail: [v.venue, v.town].filter(Boolean).join(', ') }, x, y);
+  if (region) showText(REGIONS[region].label, `Click to zoom in · ${regionSize.get(region)} ridings`, x, y);
+  else showText(d.properties.name, '', x, y);
 }
 
 function hideTip() {

@@ -1,14 +1,13 @@
 // File locations, and the fixed settings and lists the map is built from.
-const CSV_FILE = 'tour.csv';
 const BOUNDARIES_FILE = 'ridings.geojson';
 const CONTEXT_FILE = 'context.geojson';
 
 const ZOOM_MS = 650;  // length of the zoom animation
-const DOT_R = 6;      // visit dot radius on screen, whatever the zoom
 const LABEL_PX = 11;  // place-name size on screen, whatever the zoom
 
-// The map has a full view plus one close-up per region. A riding belongs to a close-up when
-// its centre sits inside that region's box, and the close-up is framed to fit all of them.
+// The map has a full view, one close-up per region, and a close-up per riding. In the full view the
+// ridings of a region light up together as one block. A riding belongs to a region when its centre sits
+// inside that region's box, and the close-up is framed to fit all of them.
 const REGIONS = {
   horseshoe: { label: 'Golden Horseshoe', box: { west: -80.0, east: -78.8, south: 42.9, north: 44.1 } },  // Niagara to Durham
   ottawa:    { label: 'Ottawa', box: { west: -76.2, east: -75.4, south: 45.1, north: 45.5 } },
