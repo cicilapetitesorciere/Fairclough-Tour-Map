@@ -19,8 +19,9 @@ function showTipFor(node, x, y) {
   else hideTip();
 }
 
+// Touch has no hover: dragging a finger across the map would flash pop-ups on every riding it passes.
 svg
-  .on('pointermove', e => showTipFor(e.target, ...d3.pointer(e, mapBox)))
+  .on('pointermove', e => { if (e.pointerType !== 'touch') showTipFor(e.target, ...d3.pointer(e, mapBox)); })
   .on('pointerleave', hideTip)
   .on('click', e => { if (isRiding(e.target)) openRiding(e.target.__data__); })
   .on('keydown', e => {
