@@ -5,9 +5,9 @@ const tipName = document.getElementById('tip-name');
 const tipPhotos = document.getElementById('tip-photos');
 
 function showTip(d, x, y) {
-  tipName.textContent = d.properties.name;
+  tipName.textContent = ridingName(d);
   const count = (d.properties.photos || []).filter(Boolean).length;
-  tipPhotos.textContent = count ? `${count} photo${count === 1 ? '' : 's'}` : '';
+  tipPhotos.textContent = count ? T.photos(count) : '';
   tipPhotos.hidden = !count;
   tip.hidden = false;
   // Below-right of the pointer, flipping to the other side near the panel's edges.

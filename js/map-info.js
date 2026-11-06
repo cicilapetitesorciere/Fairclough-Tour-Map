@@ -16,10 +16,11 @@ function openRiding(d) {
 }
 
 function showInfo(d) {
-  const { name, description, photos } = d.properties;
+  const { photos } = d.properties;
+  const name = ridingName(d);
   const urls = Array.isArray(photos) ? photos.filter(Boolean) : [];
   infoName.textContent = name;
-  infoText.textContent = description || (urls.length ? '' : 'Nothing here yet.');
+  infoText.textContent = d.properties.description || (urls.length ? '' : T.empty);
   infoText.hidden = !infoText.textContent;
   infoPhotos.replaceChildren(...urls.map(url =>
     el('a', { href: url, target: '_blank', rel: 'noopener' },
