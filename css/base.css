@@ -1,29 +1,22 @@
-/* Colours, fonts and page basics. The riding map fills the page. One light look, set deliberately. */
+/* Page basics. Text, headings, buttons and the page background come from the campaign site's theme
+   stylesheet, linked first in index.html; this only adds what the map needs on top of it. */
 :root {
   color-scheme: light;
+  /* From the campaign site's palette. */
   --crimson: #960018;
-  --crimson-deep: #6d0011;
-  --yellow: #fbec5d;
+  --maroon: #660000;
+  --maroon-deep: #620010;
   --paper: #f4f0ec;
+  /* The map's own. */
   --card: #ffffff;
-  --text: #222222;
-  --ink: #333333;
   --muted: #666666;
   --land-context: #ebe6de;
   --context-edge: #cfc8bd;
-  --label-land: #a79f94;
-  --label-water: #8c9ba5;
   --water: #dce3e7;
   --shadow: 0 1px 5px rgb(0 0 0 / 0.14);
-  --font: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 /* Several elements set their own display, which would otherwise beat the hidden attribute. */
 [hidden] { display: none !important; }
 
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--text);
-  font: 400 17px/1.55 var(--font);
-}
+body { margin: 0; }

@@ -3,7 +3,10 @@
 <title>Lee Fairclough Tour Log</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,700&display=swap">
+<!-- The campaign site's theme: its colours, text, headings and buttons. HubSpot builds this file, so
+     the URL changes when the site's theme is edited; update it here to pick up the new version. -->
+<link rel="stylesheet" href="https://www.leefairclough.ca/hubfs/hub_generated/template_assets/1/345587353571/1792773582909/template_theme-overrides.min.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/map.css">
 
@@ -16,11 +19,12 @@
     </div>
     <p class="notice" id="notice" role="status" hidden></p>
     <svg id="map" aria-label="Map of Ontario's provincial ridings"></svg>
-    <button type="button" class="back-btn" id="view-back" hidden>← Back to full map</button>
-    <div class="view-label" id="view-label" aria-live="polite" hidden></div>
+    <div class="zoom-controls">
+      <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+      <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+    </div>
     <div class="tip" id="tip" hidden>
       <span class="tip-name" id="tip-name"></span>
-      <span class="tip-detail" id="tip-detail"></span>
     </div>
   </div>
 </main>

@@ -1,43 +1,32 @@
-// Draws the ridings, and handles pointer, click and keyboard input on the map.
+// Draws the ridings, and handles pointer, click and keyboard input on the map. Clicking a riding zooms
+// in on it and opens its window.
 
 function drawRidings() {
   shapes = ridingLayer.selectAll('path')
     .data(features)
     .join('path')
-    .attr('class', d => regionOf.has(d.properties.id) ? 'riding zoomable' : 'riding')
+    .attr('class', 'riding')
     .attr('tabindex', 0)
     .attr('role', 'button')
     .attr('aria-label', d => d.properties.name);
 }
 
-const isRiding = target => target.matches('.riding');
-
-// In the full view, a riding in a region zooms in on the whole region. Any other click zooms in
-// on the riding and opens its window.
-function activate(target) {
-  const d = target.__data__;
-  const region = regionOf.get(d.properties.id);
-  if (view === 'all' && region) setView(region);
-  else openRiding(d);
-}
+const isRiding = node => node.matches('.riding');
 
 // The pop-up for the riding under the pointer or with keyboard focus. Anywhere else hides it.
-function showTipFor(target, x, y) {
-  if (isRiding(target)) showTip(target.__data__, x, y);
+function showTipFor(node, x, y) {
+  if (isRiding(node)) showTip(node.__data__, x, y);
   else hideTip();
 }
 
 svg
   .on('pointermove', e => showTipFor(e.target, ...d3.pointer(e, mapBox)))
   .on('pointerleave', hideTip)
-  .on('click', e => {
-    if (isRiding(e.target)) activate(e.target);
-    else if (view !== 'all') setView('all');  // clicking empty water when zoomed in zooms back out
-  })
+  .on('click', e => { if (isRiding(e.target)) openRiding(e.target.__data__); })
   .on('keydown', e => {
     if ((e.key === 'Enter' || e.key === ' ') && isRiding(e.target)) {
       e.preventDefault();
-      activate(e.target);
+      openRiding(e.target.__data__);
     }
   });
 

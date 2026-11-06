@@ -26,22 +26,10 @@ async function load() {
   layout();
 }
 
-// Indexes the ridings by number, and works out which region each one belongs to.
+// Indexes the ridings by number.
 function indexRidings(geo) {
   features = geo.features;
-  for (const f of features) {
-    const id = f.properties.id;
-    ridingById.set(id, f);
-    const [lon, lat] = d3.geoCentroid(f);
-    const region = Object.keys(REGIONS).find(key => {
-      const { west, east, south, north } = REGIONS[key].box;
-      return lon >= west && lon <= east && lat >= south && lat <= north;
-    });
-    if (region) {
-      regionOf.set(id, region);
-      regionSize.set(region, (regionSize.get(region) ?? 0) + 1);
-    }
-  }
+  for (const f of features) ridingById.set(f.properties.id, f);
 }
 
 load();

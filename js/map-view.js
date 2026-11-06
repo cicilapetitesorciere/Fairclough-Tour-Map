@@ -1,52 +1,66 @@
-// The map's views: the whole province, one region, or one riding.
+// Moving around the map: drag to pan, scroll or pinch to zoom, the zoom buttons, and the animated
+// zooms to the whole province or a riding.
 function mapSize() {
   const r = mapBox.getBoundingClientRect();
   return [r.width, r.height];
 }
 
+const zoom = d3.zoom()
+  .scaleExtent([1, MAX_ZOOM])
+  .clickDistance(4)  // a click that wobbles a few pixels is still a click, not a drag
+  .on('zoom', zoomed);
+svg.call(zoom).on('dblclick.zoom', null);  // a double-click would also click the riding under it twice
+
 // Fits Ontario to the panel, leaving a margin so the neighbouring provinces and states show.
+// On a resize, whatever is in the middle of the map stays in the middle.
+let size = null;
 function layout() {
   if (!features.length) return;
   const [w, h] = mapSize();
+  const middle = size && projection.invert(transform.invert([size[0] / 2, size[1] / 2]));
+  size = [w, h];
   const mx = Math.max(16, w * 0.07);
   projection.fitExtent([[mx, 60], [w - mx, h - 52]], { type: 'FeatureCollection', features });
   shapes.attr('d', path);
   contextLayer.selectAll('path').attr('d', path);
-  applyView(false);
+  zoom.extent([[0, 0], [w, h]]).translateExtent([[0, 0], [w, h]]);
+  if (zoomTarget !== null || !middle) return svg.call(zoom.transform, frame(zoomTarget));
+  const [x, y] = projection(middle), k = transform.k;
+  svg.call(zoom.transform, d3.zoomIdentity.translate(w / 2 - k * x, h / 2 - k * y).scale(k));
 }
 new ResizeObserver(layout).observe(mapBox);
 
-// The zoom and offset that frame the current view. A close-up fits its riding, or all of its region's ridings.
-function viewTransform() {
-  if (view === 'all') return { x: 0, y: 0, k: 1 };
-  const [w, h] = mapSize();
-  const b = (typeof view === 'number' ? [ridingById.get(view)] : features.filter(f => regionOf.get(f.properties.id) === view))
-    .map(f => path.bounds(f));
-  const x0 = d3.min(b, d => d[0][0]), y0 = d3.min(b, d => d[0][1]);
-  const x1 = d3.max(b, d => d[1][0]), y1 = d3.max(b, d => d[1][1]);
-  const k = Math.max(1, 0.86 / Math.max((x1 - x0) / w, (y1 - y0) / h));
-  return { k, x: w / 2 - k * (x0 + x1) / 2, y: h / 2 - k * (y0 + y1) / 2 };
+// The zoom that fits a riding in the panel. 'all' (or null) is the whole province.
+function frame(key) {
+  if (key === 'all' || key === null) return d3.zoomIdentity;
+  const [w, h] = size;
+  const [[x0, y0], [x1, y1]] = path.bounds(ridingById.get(key));
+  const k = Math.min(MAX_ZOOM, Math.max(1, 0.86 / Math.max((x1 - x0) / w, (y1 - y0) / h)));
+  return d3.zoomIdentity.translate(w / 2 - k * (x0 + x1) / 2, h / 2 - k * (y0 + y1) / 2).scale(k);
 }
 
-function setView(next) {
-  if (next === view) return;
-  view = next;
-  cancelPendingInfo();
-  applyView(true);
-}
-
-function applyView(animate) {
-  const t = viewTransform();
-  animated(g, animate).attr('transform', `translate(${t.x},${t.y}) scale(${t.k})`);
-  positionLabels(animate, t.k);
-  // The close-up's name and the Back button only appear once zoomed in.
-  const zoomed = view !== 'all';
-  mapBox.dataset.view = view;
-  viewLabel.hidden = !zoomed;
-  backButton.hidden = !zoomed;
-  if (zoomed) viewLabel.textContent = typeof view === 'number' ? ridingById.get(view).properties.name : REGIONS[view].label;
+function zoomed(e) {
+  transform = e.transform;
+  if (e.sourceEvent) zoomTarget = null;  // the viewer moved the map themselves
+  g.attr('transform', transform);
+  const zoomedIn = transform.k > 1.001;
+  zoomOutButton.disabled = !zoomedIn;
+  zoomInButton.disabled = transform.k > MAX_ZOOM - 0.001;
   hideTip();
 }
 
-backButton.addEventListener('click', () => setView('all'));
+// Animated zoom to the whole province ('all') or a riding.
+function setView(key) {
+  cancelPendingInfo();
+  zoomTarget = key === 'all' ? null : key;
+  animated(svg, true).call(zoom.transform, frame(key));
+}
+
+function zoomBy(factor) {
+  zoomTarget = null;
+  animated(svg, true).call(zoom.scaleBy, factor);
+}
+
+zoomInButton.addEventListener('click', () => zoomBy(2));
+zoomOutButton.addEventListener('click', () => zoomBy(0.5));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !info.open) setView('all'); });
