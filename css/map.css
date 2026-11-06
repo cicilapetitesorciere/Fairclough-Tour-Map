@@ -55,6 +55,7 @@
   line-height: 1.25;
 }
 .tip-name { font-size: 16px; font-weight: 700; }
+.tip-photos { font-size: 13px; font-weight: 600; color: var(--muted); }
 
 .notice {
   position: absolute;

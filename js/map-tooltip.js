@@ -1,8 +1,14 @@
-// The hover pop-up: the name of the riding under the pointer.
+// The hover pop-up: the name of the riding under the pointer, and how many
+// photos it has — otherwise there is no way to tell a riding with a gallery
+// from one that still says "Nothing here yet".
 const tipName = document.getElementById('tip-name');
+const tipPhotos = document.getElementById('tip-photos');
 
 function showTip(d, x, y) {
   tipName.textContent = d.properties.name;
+  const count = (d.properties.photos || []).filter(Boolean).length;
+  tipPhotos.textContent = count ? `${count} photo${count === 1 ? '' : 's'}` : '';
+  tipPhotos.hidden = !count;
   tip.hidden = false;
   // Below-right of the pointer, flipping to the other side near the panel's edges.
   const [w, h] = mapSize();
