@@ -36,12 +36,14 @@ function indexRidings(geo) {
   for (const f of features) ridingById.set(f.properties.id, f);
 }
 
-// Groups the endorsements by the riding they belong to (one with no matching riding on the map is never shown).
+// Groups the endorsements by the riding they belong to (a name that matches no riding on the map is never shown).
 function indexEndorsements(list) {
   for (const e of list) {
-    if (!e.riding) continue;
-    if (!endorsementsByRiding.has(e.riding)) endorsementsByRiding.set(e.riding, []);
-    endorsementsByRiding.get(e.riding).push(e);
+    // `ridings` is a list; older data had a single `riding`.
+    for (const riding of e.ridings ?? (e.riding ? [e.riding] : [])) {
+      if (!endorsementsByRiding.has(riding)) endorsementsByRiding.set(riding, []);
+      endorsementsByRiding.get(riding).push(e);
+    }
   }
 }
 
