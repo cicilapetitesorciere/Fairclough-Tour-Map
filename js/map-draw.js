@@ -8,7 +8,7 @@ function drawRidings() {
     .attr('class', 'riding')
     .attr('tabindex', 0)
     .attr('role', 'button')
-    .attr('aria-label', d => d.properties.name);
+    .attr('aria-label', d => ridingName(d));
 }
 
 const isRiding = node => node.matches('.riding');

@@ -16,16 +16,22 @@ function findRidings(query) {
   if (!q) return [];
   const words = q.split(' ');
   return features
-    .map(f => ({ f, name: simplify(f.properties.name) }))
-    .filter(({ name }) => words.every(w => name.includes(w)))
-    .sort((a, b) => (b.name.startsWith(q) - a.name.startsWith(q)) || a.f.properties.name.localeCompare(b.f.properties.name))
+    .map(f => ({
+      f,
+      name: simplify(ridingName(f)),
+      // Both languages match, so "Ottawa Centre" still finds Ottawa-Centre and
+      // a French speaker can type either name.
+      aliases: [simplify(f.properties.name), simplify(f.properties.name_fr || '')],
+    }))
+    .filter(({ name, aliases }) => words.every(w => name.includes(w) || aliases.some(a => a.includes(w))))
+    .sort((a, b) => (b.name.startsWith(q) - a.name.startsWith(q)) || ridingName(a.f).localeCompare(ridingName(b.f)))
     .slice(0, MAX_SUGGESTIONS)
     .map(({ f }) => f);
 }
 
 function renderSuggestions() {
   searchList.replaceChildren(...suggestions.map((f, i) =>
-    el('li', { role: 'option', id: 'search-opt-' + i, 'aria-selected': String(i === active) }, f.properties.name)));
+    el('li', { role: 'option', id: 'search-opt-' + i, 'aria-selected': String(i === active) }, ridingName(f))));
   const open = suggestions.length > 0;
   searchList.hidden = !open;
   searchInput.setAttribute('aria-expanded', String(open));

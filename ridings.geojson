@@ -6,6 +6,7 @@
       "properties": {
         "id": 8,
         "name": "Brampton Centre",
+        "name_fr": "Brampton-Centre",
         "description": "",
         "photos": ["photos/brampton-centre/01.jpg", "photos/brampton-centre/02.jpg", "photos/brampton-centre/03.jpg", "photos/brampton-centre/04.jpg"]
       },
@@ -16,6 +17,7 @@
       "properties": {
         "id": 97,
         "name": "Scarborough—Rouge Park",
+        "name_fr": "Scarborough—Rouge Park",
         "description": "",
         "photos": ["photos/scarborough-rouge-park/01.jpg"]
       },
@@ -26,6 +28,7 @@
       "properties": {
         "id": 96,
         "name": "Scarborough North",
+        "name_fr": "Scarborough-Nord",
         "description": "",
         "photos": ["photos/scarborough-north/01.jpg", "photos/scarborough-north/02.jpg", "photos/scarborough-north/03.jpg", "photos/scarborough-north/04.jpg"]
       },
@@ -36,6 +39,7 @@
       "properties": {
         "id": 1,
         "name": "Ajax",
+        "name_fr": "Ajax",
         "description": "",
         "photos": ["photos/ajax/01.jpg", "photos/ajax/02.jpg", "photos/ajax/03.jpg", "photos/ajax/04.jpg", "photos/ajax/05.jpg"]
       },
@@ -46,6 +50,7 @@
       "properties": {
         "id": 91,
         "name": "Sarnia—Lambton",
+        "name_fr": "Sarnia—Lambton",
         "description": "",
         "photos": []
       },
@@ -56,6 +61,7 @@
       "properties": {
         "id": 7,
         "name": "Beaches—East York",
+        "name_fr": "Beaches—East York",
         "description": "",
         "photos": ["photos/beaches-east-york/01.jpg", "photos/beaches-east-york/02.jpg", "photos/beaches-east-york/03.jpg", "photos/beaches-east-york/04.jpg"]
       },
@@ -66,6 +72,7 @@
       "properties": {
         "id": 64,
         "name": "Mississauga—Malton",
+        "name_fr": "Mississauga—Malton",
         "description": "",
         "photos": ["photos/mississauga-malton/01.jpg", "photos/mississauga-malton/02.jpg"]
       },
@@ -76,6 +83,7 @@
       "properties": {
         "id": 79,
         "name": "Ottawa South",
+        "name_fr": "Ottawa-Sud",
         "description": "",
         "photos": []
       },
@@ -86,6 +94,7 @@
       "properties": {
         "id": 34,
         "name": "Haldimand—Norfolk",
+        "name_fr": "Haldimand—Norfolk",
         "description": "",
         "photos": []
       },
@@ -96,6 +105,7 @@
       "properties": {
         "id": 105,
         "name": "Thunder Bay—Atikokan",
+        "name_fr": "Thunder Bay—Atikokan",
         "description": "",
         "photos": ["photos/thunder-bay-atikokan/01.jpg", "photos/thunder-bay-atikokan/02.jpg", "photos/thunder-bay-atikokan/03.jpg", "photos/thunder-bay-atikokan/04.jpg"]
       },
@@ -106,6 +116,7 @@
       "properties": {
         "id": 54,
         "name": "London North Centre",
+        "name_fr": "London-Centre-Nord",
         "description": "",
         "photos": ["photos/london-north-centre/01.jpg", "photos/london-north-centre/02.jpg", "photos/london-north-centre/03.jpg"]
       },
@@ -116,6 +127,7 @@
       "properties": {
         "id": 93,
         "name": "Scarborough—Agincourt",
+        "name_fr": "Scarborough—Agincourt",
         "description": "",
         "photos": ["photos/scarborough-agincourt/01.jpg", "photos/scarborough-agincourt/02.jpg", "photos/scarborough-agincourt/03.jpg", "photos/scarborough-agincourt/04.jpg"]
       },
@@ -126,6 +138,7 @@
       "properties": {
         "id": 58,
         "name": "Markham—Unionville",
+        "name_fr": "Markham—Unionville",
         "description": "",
         "photos": ["photos/markham-unionville/01.jpg", "photos/markham-unionville/02.jpg"]
       },
@@ -136,6 +149,7 @@
       "properties": {
         "id": 53,
         "name": "London—Fanshawe",
+        "name_fr": "London—Fanshawe",
         "description": "",
         "photos": []
       },
@@ -146,6 +160,7 @@
       "properties": {
         "id": 102,
         "name": "Stormont—Dundas—South Glengarry",
+        "name_fr": "Stormont—Dundas—South Glengarry",
         "description": "",
         "photos": ["photos/stormont-dundas-south-glengarry/01.jpg", "photos/stormont-dundas-south-glengarry/02.jpg"]
       },
@@ -156,6 +171,7 @@
       "properties": {
         "id": 12,
         "name": "Brampton West",
+        "name_fr": "Brampton-Ouest",
         "description": "",
         "photos": []
       },
@@ -166,6 +182,7 @@
       "properties": {
         "id": 114,
         "name": "Waterloo",
+        "name_fr": "Waterloo",
         "description": "",
         "photos": ["photos/waterloo/01.jpg", "photos/waterloo/02.jpg", "photos/waterloo/03.jpg", "photos/waterloo/04.jpg"]
       },
@@ -176,6 +193,7 @@
       "properties": {
         "id": 21,
         "name": "Don Valley North",
+        "name_fr": "Don Valley-Nord",
         "description": "",
         "photos": []
       },
@@ -186,6 +204,7 @@
       "properties": {
         "id": 28,
         "name": "Etobicoke Centre",
+        "name_fr": "Etobicoke-Centre",
         "description": "",
         "photos": ["photos/etobicoke-centre/01.jpg", "photos/etobicoke-centre/02.jpg", "photos/etobicoke-centre/03.jpg", "photos/etobicoke-centre/04.jpg"]
       },
@@ -196,6 +215,7 @@
       "properties": {
         "id": 88,
         "name": "Renfrew—Nipissing—Pembroke",
+        "name_fr": "Renfrew—Nipissing—Pembroke",
         "description": "",
         "photos": ["photos/renfrew-nipissing-pembroke/01.jpg", "photos/renfrew-nipissing-pembroke/02.jpg", "photos/renfrew-nipissing-pembroke/03.jpg"]
       },
@@ -206,6 +226,7 @@
       "properties": {
         "id": 4,
         "name": "Barrie—Innisfil",
+        "name_fr": "Barrie—Innisfil",
         "description": "",
         "photos": ["photos/barrie-innisfil/01.jpg", "photos/barrie-innisfil/02.jpg"]
       },
@@ -216,6 +237,7 @@
       "properties": {
         "id": 61,
         "name": "Mississauga East—Cooksville",
+        "name_fr": "Mississauga-Est—Cooksville",
         "description": "",
         "photos": []
       },
@@ -226,6 +248,7 @@
       "properties": {
         "id": 90,
         "name": "St. Catharines",
+        "name_fr": "St. Catharines",
         "description": "",
         "photos": ["photos/st-catharines/01.jpg", "photos/st-catharines/02.jpg"]
       },
@@ -236,6 +259,7 @@
       "properties": {
         "id": 17,
         "name": "Carleton",
+        "name_fr": "Carleton",
         "description": "",
         "photos": ["photos/carleton/01.jpg", "photos/carleton/02.jpg", "photos/carleton/03.jpg"]
       },
@@ -246,6 +270,7 @@
       "properties": {
         "id": 70,
         "name": "Niagara West",
+        "name_fr": "Niagara-Ouest",
         "description": "",
         "photos": []
       },
@@ -256,6 +281,7 @@
       "properties": {
         "id": 39,
         "name": "Hamilton West—Ancaster—Dundas",
+        "name_fr": "Hamilton-Ouest—Ancaster—Dundas",
         "description": "",
         "photos": ["photos/hamilton-west-ancaster-dundas/01.jpg", "photos/hamilton-west-ancaster-dundas/02.jpg"]
       },
@@ -266,6 +292,7 @@
       "properties": {
         "id": 3,
         "name": "Aurora—Oak Ridges—Richmond Hill",
+        "name_fr": "Aurora—Oak Ridges—Richmond Hill",
         "description": "",
         "photos": []
       },
@@ -276,6 +303,7 @@
       "properties": {
         "id": 60,
         "name": "Mississauga Centre",
+        "name_fr": "Mississauga-Centre",
         "description": "",
         "photos": []
       },
@@ -286,6 +314,7 @@
       "properties": {
         "id": 63,
         "name": "Mississauga—Lakeshore",
+        "name_fr": "Mississauga—Lakeshore",
         "description": "",
         "photos": ["photos/mississauga-lakeshore/01.jpg"]
       },
@@ -296,6 +325,7 @@
       "properties": {
         "id": 43,
         "name": "Kanata—Carleton",
+        "name_fr": "Kanata—Carleton",
         "description": "",
         "photos": ["photos/kanata-carleton/01.jpg", "photos/kanata-carleton/02.jpg", "photos/kanata-carleton/03.jpg", "photos/kanata-carleton/04.jpg"]
       },
@@ -306,6 +336,7 @@
       "properties": {
         "id": 120,
         "name": "York Centre",
+        "name_fr": "York-Centre",
         "description": "",
         "photos": []
       },
@@ -316,6 +347,7 @@
       "properties": {
         "id": 73,
         "name": "Northumberland—Peterborough South",
+        "name_fr": "Northumberland—Peterborough-Sud",
         "description": "",
         "photos": ["photos/northumberland-peterborough-south/01.jpg", "photos/northumberland-peterborough-south/02.jpg", "photos/northumberland-peterborough-south/03.jpg", "photos/northumberland-peterborough-south/04.jpg"]
       },
@@ -326,6 +358,7 @@
       "properties": {
         "id": 67,
         "name": "Newmarket—Aurora",
+        "name_fr": "Newmarket—Aurora",
         "description": "",
         "photos": ["photos/newmarket-aurora/01.jpg", "photos/newmarket-aurora/02.jpg", "photos/newmarket-aurora/03.jpg"]
       },
@@ -336,6 +369,7 @@
       "properties": {
         "id": 123,
         "name": "Kiiwetinoong",
+        "name_fr": "Kiiwetinoong",
         "description": "",
         "photos": ["photos/kiiwetinoong/01.jpg", "photos/kiiwetinoong/02.jpg", "photos/kiiwetinoong/03.jpg"]
       },
@@ -346,6 +380,7 @@
       "properties": {
         "id": 24,
         "name": "Durham",
+        "name_fr": "Durham",
         "description": "",
         "photos": ["photos/durham/01.jpg", "photos/durham/02.jpg"]
       },
@@ -356,6 +391,7 @@
       "properties": {
         "id": 44,
         "name": "Kenora—Rainy River",
+        "name_fr": "Kenora—Rainy River",
         "description": "",
         "photos": ["photos/kenora-rainy-river/01.jpg", "photos/kenora-rainy-river/02.jpg", "photos/kenora-rainy-river/03.jpg"]
       },
@@ -366,6 +402,7 @@
       "properties": {
         "id": 103,
         "name": "Sudbury",
+        "name_fr": "Sudbury",
         "description": "",
         "photos": ["photos/sudbury/01.jpg", "photos/sudbury/02.jpg", "photos/sudbury/03.jpg", "photos/sudbury/04.jpg"]
       },
@@ -376,6 +413,7 @@
       "properties": {
         "id": 72,
         "name": "Nipissing",
+        "name_fr": "Nipissing",
         "description": "",
         "photos": ["photos/nipissing/01.jpg", "photos/nipissing/02.jpg"]
       },
@@ -386,6 +424,7 @@
       "properties": {
         "id": 5,
         "name": "Barrie—Springwater—Oro-Medonte",
+        "name_fr": "Barrie—Springwater—Oro-Medonte",
         "description": "",
         "photos": ["photos/barrie-springwater-oro-medonte/01.jpg", "photos/barrie-springwater-oro-medonte/02.jpg", "photos/barrie-springwater-oro-medonte/03.jpg", "photos/barrie-springwater-oro-medonte/04.jpg"]
       },
@@ -396,6 +435,7 @@
       "properties": {
         "id": 99,
         "name": "Simcoe—Grey",
+        "name_fr": "Simcoe—Grey",
         "description": "",
         "photos": []
       },
@@ -406,6 +446,7 @@
       "properties": {
         "id": 35,
         "name": "Haliburton—Kawartha Lakes—Brock",
+        "name_fr": "Haliburton—Kawartha Lakes—Brock",
         "description": "",
         "photos": []
       },
@@ -416,6 +457,7 @@
       "properties": {
         "id": 86,
         "name": "Peterborough—Kawartha",
+        "name_fr": "Peterborough—Kawartha",
         "description": "",
         "photos": ["photos/peterborough-kawartha/01.jpg", "photos/peterborough-kawartha/02.jpg"]
       },
@@ -426,6 +468,7 @@
       "properties": {
         "id": 6,
         "name": "Bay of Quinte",
+        "name_fr": "Baie de Quinte",
         "description": "",
         "photos": ["photos/bay-of-quinte/01.jpg", "photos/bay-of-quinte/02.jpg", "photos/bay-of-quinte/03.jpg", "photos/bay-of-quinte/04.jpg"]
       },
@@ -436,6 +479,7 @@
       "properties": {
         "id": 52,
         "name": "Leeds—Grenville—Thousand Islands and Rideau Lakes",
+        "name_fr": "Leeds—Grenville—Thousand Islands et Rideau Lakes",
         "description": "",
         "photos": ["photos/leeds-grenville-thousand-islands-and-rideau-lakes/01.jpg", "photos/leeds-grenville-thousand-islands-and-rideau-lakes/02.jpg"]
       },
@@ -446,6 +490,7 @@
       "properties": {
         "id": 108,
         "name": "Timmins",
+        "name_fr": "Timmins",
         "description": "",
         "photos": ["photos/timmins/01.jpg"]
       },
@@ -456,6 +501,7 @@
       "properties": {
         "id": 106,
         "name": "Thunder Bay—Superior North",
+        "name_fr": "Thunder Bay—Supérieur-Nord",
         "description": "",
         "photos": ["photos/thunder-bay-superior-north/01.jpg", "photos/thunder-bay-superior-north/02.jpg", "photos/thunder-bay-superior-north/03.jpg", "photos/thunder-bay-superior-north/04.jpg"]
       },
@@ -466,6 +512,7 @@
       "properties": {
         "id": 46,
         "name": "Kingston and the Islands",
+        "name_fr": "Kingston et les Îles",
         "description": "",
         "photos": ["photos/kingston-and-the-islands/01.jpg", "photos/kingston-and-the-islands/02.jpg", "photos/kingston-and-the-islands/03.jpg"]
       },
@@ -476,6 +523,7 @@
       "properties": {
         "id": 77,
         "name": "Oshawa",
+        "name_fr": "Oshawa",
         "description": "",
         "photos": ["photos/oshawa/01.jpg", "photos/oshawa/02.jpg", "photos/oshawa/03.jpg"]
       },
@@ -486,6 +534,7 @@
       "properties": {
         "id": 116,
         "name": "Whitby",
+        "name_fr": "Whitby",
         "description": "",
         "photos": ["photos/whitby/01.jpg"]
       },
@@ -496,6 +545,7 @@
       "properties": {
         "id": 118,
         "name": "Windsor—Tecumseh",
+        "name_fr": "Windsor—Tecumseh",
         "description": "",
         "photos": []
       },
@@ -506,6 +556,7 @@
       "properties": {
         "id": 119,
         "name": "Windsor West",
+        "name_fr": "Windsor-Ouest",
         "description": "",
         "photos": []
       },
@@ -516,6 +567,7 @@
       "properties": {
         "id": 27,
         "name": "Essex",
+        "name_fr": "Essex",
         "description": "",
         "photos": []
       },
@@ -526,6 +578,7 @@
       "properties": {
         "id": 124,
         "name": "Mushkegowuk—James Bay",
+        "name_fr": "Mushkegowuk—Baie James",
         "description": "",
         "photos": ["photos/mushkegowuk-james-bay/01.jpg", "photos/mushkegowuk-james-bay/02.jpg"]
       },
@@ -536,6 +589,7 @@
       "properties": {
         "id": 57,
         "name": "Markham—Thornhill",
+        "name_fr": "Markham—Thornhill",
         "description": "",
         "photos": ["photos/markham-thornhill/01.jpg", "photos/markham-thornhill/02.jpg", "photos/markham-thornhill/03.jpg"]
       },
@@ -546,6 +600,7 @@
       "properties": {
         "id": 74,
         "name": "Oakville",
+        "name_fr": "Oakville",
         "description": "",
         "photos": ["photos/oakville/01.jpg", "photos/oakville/02.jpg"]
       },
@@ -556,6 +611,7 @@
       "properties": {
         "id": 62,
         "name": "Mississauga—Erin Mills",
+        "name_fr": "Mississauga—Erin Mills",
         "description": "",
         "photos": []
       },
@@ -566,6 +622,7 @@
       "properties": {
         "id": 117,
         "name": "Willowdale",
+        "name_fr": "Willowdale",
         "description": "",
         "photos": ["photos/willowdale/01.jpg", "photos/willowdale/02.jpg"]
       },
@@ -576,6 +633,7 @@
       "properties": {
         "id": 20,
         "name": "Don Valley East",
+        "name_fr": "Don Valley-Est",
         "description": "",
         "photos": ["photos/don-valley-east/01.jpg"]
       },
@@ -586,6 +644,7 @@
       "properties": {
         "id": 95,
         "name": "Scarborough—Guildwood",
+        "name_fr": "Scarborough—Guildwood",
         "description": "",
         "photos": []
       },
@@ -596,6 +655,7 @@
       "properties": {
         "id": 40,
         "name": "Hastings—Lennox and Addington",
+        "name_fr": "Hastings—Lennox and Addington",
         "description": "",
         "photos": ["photos/hastings-lennox-and-addington/01.jpg", "photos/hastings-lennox-and-addington/02.jpg", "photos/hastings-lennox-and-addington/03.jpg"]
       },
@@ -606,6 +666,7 @@
       "properties": {
         "id": 51,
         "name": "Lanark—Frontenac—Kingston",
+        "name_fr": "Lanark—Frontenac—Kingston",
         "description": "",
         "photos": []
       },
@@ -616,6 +677,7 @@
       "properties": {
         "id": 55,
         "name": "London West",
+        "name_fr": "London-Ouest",
         "description": "",
         "photos": []
       },
@@ -626,6 +688,7 @@
       "properties": {
         "id": 98,
         "name": "Scarborough Southwest",
+        "name_fr": "Scarborough-Sud-Ouest",
         "description": "",
         "photos": ["photos/scarborough-southwest/01.jpg", "photos/scarborough-southwest/02.jpg", "photos/scarborough-southwest/03.jpg", "photos/scarborough-southwest/04.jpg", "photos/scarborough-southwest/05.jpg"]
       },
@@ -636,6 +699,7 @@
       "properties": {
         "id": 94,
         "name": "Scarborough Centre",
+        "name_fr": "Scarborough-Centre",
         "description": "",
         "photos": ["photos/scarborough-centre/01.jpg", "photos/scarborough-centre/02.jpg"]
       },
@@ -646,6 +710,7 @@
       "properties": {
         "id": 23,
         "name": "Dufferin—Caledon",
+        "name_fr": "Dufferin—Caledon",
         "description": "",
         "photos": ["photos/dufferin-caledon/01.jpg"]
       },
@@ -656,6 +721,7 @@
       "properties": {
         "id": 22,
         "name": "Don Valley West",
+        "name_fr": "Don Valley-Ouest",
         "description": "",
         "photos": []
       },
@@ -666,6 +732,7 @@
       "properties": {
         "id": 25,
         "name": "Eglinton—Lawrence",
+        "name_fr": "Eglinton—Lawrence",
         "description": "",
         "photos": ["photos/eglinton-lawrence/01.jpg", "photos/eglinton-lawrence/02.jpg"]
       },
@@ -676,6 +743,7 @@
       "properties": {
         "id": 49,
         "name": "Kitchener South—Hespeler",
+        "name_fr": "Kitchener-Sud—Hespeler",
         "description": "",
         "photos": ["photos/kitchener-south-hespeler/01.jpg", "photos/kitchener-south-hespeler/02.jpg", "photos/kitchener-south-hespeler/03.jpg"]
       },
@@ -686,6 +754,7 @@
       "properties": {
         "id": 47,
         "name": "Kitchener Centre",
+        "name_fr": "Kitchener-Centre",
         "description": "",
         "photos": ["photos/kitchener-centre/01.jpg"]
       },
@@ -696,6 +765,7 @@
       "properties": {
         "id": 111,
         "name": "Toronto—St. Paul's",
+        "name_fr": "Toronto—St. Paul's",
         "description": "",
         "photos": []
       },
@@ -706,6 +776,7 @@
       "properties": {
         "id": 45,
         "name": "King—Vaughan",
+        "name_fr": "King—Vaughan",
         "description": "",
         "photos": ["photos/king-vaughan/01.jpg", "photos/king-vaughan/02.jpg", "photos/king-vaughan/03.jpg"]
       },
@@ -716,6 +787,7 @@
       "properties": {
         "id": 89,
         "name": "Richmond Hill",
+        "name_fr": "Richmond Hill",
         "description": "",
         "photos": ["photos/richmond-hill/01.jpg"]
       },
@@ -726,6 +798,7 @@
       "properties": {
         "id": 9,
         "name": "Brampton East",
+        "name_fr": "Brampton-Est",
         "description": "",
         "photos": ["photos/brampton-east/01.jpg", "photos/brampton-east/02.jpg", "photos/brampton-east/03.jpg", "photos/brampton-east/04.jpg", "photos/brampton-east/05.jpg", "photos/brampton-east/06.jpg"]
       },
@@ -736,6 +809,7 @@
       "properties": {
         "id": 59,
         "name": "Milton",
+        "name_fr": "Milton",
         "description": "",
         "photos": ["photos/milton/01.jpg", "photos/milton/02.jpg", "photos/milton/03.jpg", "photos/milton/04.jpg"]
       },
@@ -746,6 +820,7 @@
       "properties": {
         "id": 10,
         "name": "Brampton North",
+        "name_fr": "Brampton-Nord",
         "description": "",
         "photos": []
       },
@@ -756,6 +831,7 @@
       "properties": {
         "id": 75,
         "name": "Oakville North—Burlington",
+        "name_fr": "Oakville-Nord—Burlington",
         "description": "",
         "photos": []
       },
@@ -766,6 +842,7 @@
       "properties": {
         "id": 15,
         "name": "Burlington",
+        "name_fr": "Burlington",
         "description": "",
         "photos": ["photos/burlington/01.jpg", "photos/burlington/02.jpg"]
       },
@@ -776,6 +853,7 @@
       "properties": {
         "id": 115,
         "name": "Wellington—Halton Hills",
+        "name_fr": "Wellington—Halton Hills",
         "description": "",
         "photos": ["photos/wellington-halton-hills/01.jpg", "photos/wellington-halton-hills/02.jpg"]
       },
@@ -786,6 +864,7 @@
       "properties": {
         "id": 33,
         "name": "Guelph",
+        "name_fr": "Guelph",
         "description": "",
         "photos": ["photos/guelph/01.jpg", "photos/guelph/02.jpg", "photos/guelph/03.jpg", "photos/guelph/04.jpg"]
       },
@@ -796,6 +875,7 @@
       "properties": {
         "id": 18,
         "name": "Chatham-Kent—Leamington",
+        "name_fr": "Chatham-Kent—Leamington",
         "description": "",
         "photos": []
       },
@@ -806,6 +886,7 @@
       "properties": {
         "id": 110,
         "name": "Toronto—Danforth",
+        "name_fr": "Toronto—Danforth",
         "description": "",
         "photos": ["photos/toronto-danforth/01.jpg"]
       },
@@ -816,6 +897,7 @@
       "properties": {
         "id": 29,
         "name": "Etobicoke—Lakeshore",
+        "name_fr": "Etobicoke—Lakeshore",
         "description": "",
         "photos": ["photos/etobicoke-lakeshore/01.jpg", "photos/etobicoke-lakeshore/02.jpg", "photos/etobicoke-lakeshore/03.jpg", "photos/etobicoke-lakeshore/04.jpg"]
       },
@@ -826,6 +908,7 @@
       "properties": {
         "id": 83,
         "name": "Parkdale—High Park",
+        "name_fr": "Parkdale—High Park",
         "description": "",
         "photos": ["photos/parkdale-high-park/01.jpg", "photos/parkdale-high-park/02.jpg", "photos/parkdale-high-park/03.jpg", "photos/parkdale-high-park/04.jpg"]
       },
@@ -836,6 +919,7 @@
       "properties": {
         "id": 112,
         "name": "University—Rosedale",
+        "name_fr": "University—Rosedale",
         "description": "",
         "photos": ["photos/university-rosedale/01.jpg", "photos/university-rosedale/02.jpg"]
       },
@@ -846,6 +930,7 @@
       "properties": {
         "id": 109,
         "name": "Toronto Centre",
+        "name_fr": "Toronto-Centre",
         "description": "",
         "photos": []
       },
@@ -856,6 +941,7 @@
       "properties": {
         "id": 66,
         "name": "Nepean",
+        "name_fr": "Nepean",
         "description": "",
         "photos": []
       },
@@ -866,6 +952,7 @@
       "properties": {
         "id": 32,
         "name": "Glengarry—Prescott—Russell",
+        "name_fr": "Glengarry—Prescott—Russell",
         "description": "",
         "photos": []
       },
@@ -876,6 +963,7 @@
       "properties": {
         "id": 31,
         "name": "Flamborough—Glanbrook",
+        "name_fr": "Flamborough—Glanbrook",
         "description": "",
         "photos": ["photos/flamborough-glanbrook/01.jpg", "photos/flamborough-glanbrook/02.jpg"]
       },
@@ -886,6 +974,7 @@
       "properties": {
         "id": 69,
         "name": "Niagara Falls",
+        "name_fr": "Niagara Falls",
         "description": "",
         "photos": ["photos/niagara-falls/01.jpg", "photos/niagara-falls/02.jpg"]
       },
@@ -896,6 +985,7 @@
       "properties": {
         "id": 68,
         "name": "Niagara Centre",
+        "name_fr": "Niagara-Centre",
         "description": "",
         "photos": []
       },
@@ -906,6 +996,7 @@
       "properties": {
         "id": 13,
         "name": "Brantford—Brant",
+        "name_fr": "Brantford—Brant",
         "description": "",
         "photos": ["photos/brantford-brant/01.jpg", "photos/brantford-brant/02.jpg", "photos/brantford-brant/03.jpg", "photos/brantford-brant/04.jpg", "photos/brantford-brant/05.jpg"]
       },
@@ -916,6 +1007,7 @@
       "properties": {
         "id": 16,
         "name": "Cambridge",
+        "name_fr": "Cambridge",
         "description": "",
         "photos": ["photos/cambridge/01.jpg", "photos/cambridge/02.jpg", "photos/cambridge/03.jpg", "photos/cambridge/04.jpg"]
       },
@@ -926,6 +1018,7 @@
       "properties": {
         "id": 65,
         "name": "Mississauga—Streetsville",
+        "name_fr": "Mississauga—Streetsville",
         "description": "",
         "photos": ["photos/mississauga-streetsville/01.jpg", "photos/mississauga-streetsville/02.jpg", "photos/mississauga-streetsville/03.jpg", "photos/mississauga-streetsville/04.jpg"]
       },
@@ -936,6 +1029,7 @@
       "properties": {
         "id": 11,
         "name": "Brampton South",
+        "name_fr": "Brampton-Sud",
         "description": "",
         "photos": ["photos/brampton-south/01.jpg", "photos/brampton-south/02.jpg", "photos/brampton-south/03.jpg"]
       },
@@ -946,6 +1040,7 @@
       "properties": {
         "id": 56,
         "name": "Markham—Stouffville",
+        "name_fr": "Markham—Stouffville",
         "description": "",
         "photos": ["photos/markham-stouffville/01.jpg", "photos/markham-stouffville/02.jpg"]
       },
@@ -956,6 +1051,7 @@
       "properties": {
         "id": 38,
         "name": "Hamilton Mountain",
+        "name_fr": "Hamilton Mountain",
         "description": "",
         "photos": []
       },
@@ -966,6 +1062,7 @@
       "properties": {
         "id": 36,
         "name": "Hamilton Centre",
+        "name_fr": "Hamilton-Centre",
         "description": "",
         "photos": ["photos/hamilton-centre/01.jpg"]
       },
@@ -976,6 +1073,7 @@
       "properties": {
         "id": 37,
         "name": "Hamilton East—Stoney Creek",
+        "name_fr": "Hamilton-Est—Stoney Creek",
         "description": "",
         "photos": ["photos/hamilton-east-stoney-creek/01.jpg", "photos/hamilton-east-stoney-creek/02.jpg", "photos/hamilton-east-stoney-creek/03.jpg"]
       },
@@ -986,6 +1084,7 @@
       "properties": {
         "id": 71,
         "name": "Nickel Belt",
+        "name_fr": "Nickel Belt",
         "description": "",
         "photos": ["photos/nickel-belt/01.jpg"]
       },
@@ -996,6 +1095,7 @@
       "properties": {
         "id": 92,
         "name": "Sault Ste. Marie",
+        "name_fr": "Sault Ste. Marie",
         "description": "",
         "photos": ["photos/sault-ste-marie/01.jpg", "photos/sault-ste-marie/02.jpg"]
       },
@@ -1006,6 +1106,7 @@
       "properties": {
         "id": 2,
         "name": "Algoma—Manitoulin",
+        "name_fr": "Algoma—Manitoulin",
         "description": "",
         "photos": ["photos/algoma-manitoulin/01.jpg", "photos/algoma-manitoulin/02.jpg", "photos/algoma-manitoulin/03.jpg", "photos/algoma-manitoulin/04.jpg"]
       },
@@ -1016,6 +1117,7 @@
       "properties": {
         "id": 107,
         "name": "Timiskaming—Cochrane",
+        "name_fr": "Timiskaming—Cochrane",
         "description": "",
         "photos": ["photos/timiskaming-cochrane/01.jpg"]
       },
@@ -1026,6 +1128,7 @@
       "properties": {
         "id": 80,
         "name": "Ottawa—Vanier",
+        "name_fr": "Ottawa—Vanier",
         "description": "",
         "photos": ["photos/ottawa-vanier/01.jpg", "photos/ottawa-vanier/02.jpg", "photos/ottawa-vanier/03.jpg", "photos/ottawa-vanier/04.jpg", "photos/ottawa-vanier/05.jpg"]
       },
@@ -1036,6 +1139,7 @@
       "properties": {
         "id": 81,
         "name": "Ottawa West—Nepean",
+        "name_fr": "Ottawa-Ouest—Nepean",
         "description": "",
         "photos": ["photos/ottawa-west-nepean/01.jpg", "photos/ottawa-west-nepean/02.jpg"]
       },
@@ -1046,6 +1150,7 @@
       "properties": {
         "id": 76,
         "name": "Orléans",
+        "name_fr": "Orléans",
         "description": "",
         "photos": ["photos/orleans/01.jpg", "photos/orleans/02.jpg"]
       },
@@ -1056,6 +1161,7 @@
       "properties": {
         "id": 78,
         "name": "Ottawa Centre",
+        "name_fr": "Ottawa-Centre",
         "description": "",
         "photos": ["photos/ottawa-centre/01.jpg", "photos/ottawa-centre/02.jpg", "photos/ottawa-centre/03.jpg"]
       },
@@ -1066,6 +1172,7 @@
       "properties": {
         "id": 30,
         "name": "Etobicoke North",
+        "name_fr": "Etobicoke-Nord",
         "description": "",
         "photos": []
       },
@@ -1076,6 +1183,7 @@
       "properties": {
         "id": 122,
         "name": "York South—Weston",
+        "name_fr": "York-Sud—Weston",
         "description": "",
         "photos": []
       },
@@ -1086,6 +1194,7 @@
       "properties": {
         "id": 41,
         "name": "Humber River—Black Creek",
+        "name_fr": "Humber River—Black Creek",
         "description": "",
         "photos": ["photos/humber-river-black-creek/01.jpg"]
       },
@@ -1096,6 +1205,7 @@
       "properties": {
         "id": 14,
         "name": "Bruce—Grey—Owen Sound",
+        "name_fr": "Bruce—Grey—Owen Sound",
         "description": "",
         "photos": []
       },
@@ -1106,6 +1216,7 @@
       "properties": {
         "id": 85,
         "name": "Perth—Wellington",
+        "name_fr": "Perth—Wellington",
         "description": "",
         "photos": ["photos/perth-wellington/01.jpg", "photos/perth-wellington/02.jpg", "photos/perth-wellington/03.jpg"]
       },
@@ -1116,6 +1227,7 @@
       "properties": {
         "id": 104,
         "name": "Thornhill",
+        "name_fr": "Thornhill",
         "description": "",
         "photos": []
       },
@@ -1126,6 +1238,7 @@
       "properties": {
         "id": 113,
         "name": "Vaughan—Woodbridge",
+        "name_fr": "Vaughan—Woodbridge",
         "description": "",
         "photos": []
       },
@@ -1136,6 +1249,7 @@
       "properties": {
         "id": 48,
         "name": "Kitchener—Conestoga",
+        "name_fr": "Kitchener—Conestoga",
         "description": "",
         "photos": []
       },
@@ -1146,6 +1260,7 @@
       "properties": {
         "id": 101,
         "name": "Spadina—Fort York",
+        "name_fr": "Spadina—Fort York",
         "description": "",
         "photos": ["photos/spadina-fort-york/01.jpg", "photos/spadina-fort-york/02.jpg"]
       },
@@ -1156,6 +1271,7 @@
       "properties": {
         "id": 19,
         "name": "Davenport",
+        "name_fr": "Davenport",
         "description": "",
         "photos": ["photos/davenport/01.jpg", "photos/davenport/02.jpg", "photos/davenport/03.jpg", "photos/davenport/04.jpg", "photos/davenport/05.jpg", "photos/davenport/06.jpg"]
       },
@@ -1166,6 +1282,7 @@
       "properties": {
         "id": 82,
         "name": "Oxford",
+        "name_fr": "Oxford",
         "description": "",
         "photos": []
       },
@@ -1176,6 +1293,7 @@
       "properties": {
         "id": 87,
         "name": "Pickering—Uxbridge",
+        "name_fr": "Pickering—Uxbridge",
         "description": "",
         "photos": ["photos/pickering-uxbridge/01.jpg", "photos/pickering-uxbridge/02.jpg"]
       },
@@ -1186,6 +1304,7 @@
       "properties": {
         "id": 121,
         "name": "York—Simcoe",
+        "name_fr": "York—Simcoe",
         "description": "",
         "photos": []
       },
@@ -1196,6 +1315,7 @@
       "properties": {
         "id": 42,
         "name": "Huron—Bruce",
+        "name_fr": "Huron—Bruce",
         "description": "",
         "photos": ["photos/huron-bruce/01.jpg", "photos/huron-bruce/02.jpg", "photos/huron-bruce/03.jpg", "photos/huron-bruce/04.jpg"]
       },
@@ -1206,6 +1326,7 @@
       "properties": {
         "id": 26,
         "name": "Elgin—Middlesex—London",
+        "name_fr": "Elgin—Middlesex—London",
         "description": "",
         "photos": ["photos/elgin-middlesex-london/01.jpg", "photos/elgin-middlesex-london/02.jpg"]
       },
@@ -1216,6 +1337,7 @@
       "properties": {
         "id": 50,
         "name": "Lambton—Kent—Middlesex",
+        "name_fr": "Lambton—Kent—Middlesex",
         "description": "",
         "photos": ["photos/lambton-kent-middlesex/01.jpg", "photos/lambton-kent-middlesex/02.jpg"]
       },
@@ -1226,6 +1348,7 @@
       "properties": {
         "id": 84,
         "name": "Parry Sound—Muskoka",
+        "name_fr": "Parry Sound—Muskoka",
         "description": "",
         "photos": ["photos/parry-sound-muskoka/01.jpg", "photos/parry-sound-muskoka/02.jpg"]
       },
@@ -1236,6 +1359,7 @@
       "properties": {
         "id": 100,
         "name": "Simcoe North",
+        "name_fr": "Simcoe-Nord",
         "description": "",
         "photos": []
       },
