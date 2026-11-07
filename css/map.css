@@ -133,12 +133,12 @@
 .info-name { margin-right: 40px; }
 .info-text { white-space: pre-line; }
 .info-photos { display: grid; gap: 12px; }
-.info-photos a { position: relative; display: block; overflow: hidden; border-radius: 6px; }
+.info-photo { position: relative; display: block; overflow: hidden; border-radius: 6px; }
 .info-photos img { display: block; width: 100%; height: auto; transition: opacity 250ms; }
 /* While a photo loads: a pale box the shape of a typical photo, with a spinner in the middle. */
-.info-photos a.is-loading { aspect-ratio: 3 / 2; background: var(--paper); }
-.info-photos a.is-loading img { opacity: 0; }
-.info-photos a.is-loading::after {
+.info-photo.is-loading { aspect-ratio: 3 / 2; background: var(--paper); }
+.info-photo.is-loading img { opacity: 0; }
+.info-photo.is-loading::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -152,7 +152,7 @@
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
-  .info-photos a.is-loading::after { animation-duration: 2.4s; }
+  .info-photo.is-loading::after { animation-duration: 2.4s; }
 }
 
 /* The search box, centred along the top of the map. The site's input styles only reach inputs inside

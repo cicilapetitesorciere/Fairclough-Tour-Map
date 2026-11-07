@@ -15,16 +15,15 @@ function openRiding(d) {
   infoTimer = setTimeout(() => showInfo(d), there || reduceMotion ? 0 : ZOOM_MS);
 }
 
-// A photo in the window, opening full size in a new tab. A spinner holds its place until it has loaded;
-// one that fails to load is dropped.
-function photoLink(url, name) {
+// A photo in the window. A spinner holds its place until it has loaded; one that fails to load is dropped.
+function photoFrame(url, name) {
   const img = el('img', { src: url, alt: name, loading: 'lazy' });
-  const link = el('a', { href: url, target: '_blank', rel: 'noopener', class: 'is-loading' }, img);
-  const loaded = () => link.classList.remove('is-loading');
+  const frame = el('div', { class: 'info-photo is-loading' }, img);
+  const loaded = () => frame.classList.remove('is-loading');
   img.addEventListener('load', loaded);
-  img.addEventListener('error', () => link.remove());
+  img.addEventListener('error', () => frame.remove());
   if (img.complete && img.naturalWidth) loaded();  // already in the browser's cache
-  return link;
+  return frame;
 }
 
 function showInfo(d) {
@@ -34,7 +33,7 @@ function showInfo(d) {
   infoName.textContent = name;
   infoText.textContent = d.properties.description || (urls.length ? '' : T.empty);
   infoText.hidden = !infoText.textContent;
-  infoPhotos.replaceChildren(...urls.map(url => photoLink(url, name)));
+  infoPhotos.replaceChildren(...urls.map(url => photoFrame(url, name)));
   infoPhotos.hidden = !urls.length;
   hideTip();
   info.showModal();
