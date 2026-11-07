@@ -4,12 +4,14 @@ async function load() {
     if (!r.ok) throw new Error(url);
     return r.json();
   });
-  let geo, contextGeo;
+  let geo, contextGeo, endorsements;
   try {
-    [geo, contextGeo] = await Promise.all([
+    [geo, contextGeo, endorsements] = await Promise.all([
       getJSON(BOUNDARIES_FILE),
       // The neighbouring provinces and states are decoration, so the page still works without them.
       getJSON(CONTEXT_FILE).catch(() => null),
+      // Endorsements are an extra too: without them the windows just have no endorsements section.
+      getJSON(ENDORSEMENTS_FILE).catch(() => []),
     ]);
   } catch {
     notice.replaceChildren(
@@ -21,6 +23,7 @@ async function load() {
   }
 
   indexRidings(geo);
+  indexEndorsements(endorsements);
   drawContext(contextGeo);
   drawRidings();
   drawPhotos();
@@ -31,6 +34,15 @@ async function load() {
 function indexRidings(geo) {
   features = geo.features;
   for (const f of features) ridingById.set(f.properties.id, f);
+}
+
+// Groups the endorsements by the riding they belong to (one with no matching riding on the map is never shown).
+function indexEndorsements(list) {
+  for (const e of list) {
+    if (!e.riding) continue;
+    if (!endorsementsByRiding.has(e.riding)) endorsementsByRiding.set(e.riding, []);
+    endorsementsByRiding.get(e.riding).push(e);
+  }
 }
 
 load();

@@ -16,6 +16,8 @@ const T = IS_FR ? {
   close: "Fermer",
   empty: "Rien ici pour le moment.",
   photos: n => (n === 1 ? "1 photo" : `${n} photos`),
+  endorsements: "Appuis",
+  readMore: "Lire l'appui complet",
 } : {
   title: "Lee Fairclough Tour Log",
   searchPlaceholder: "Find your riding…",
@@ -26,6 +28,8 @@ const T = IS_FR ? {
   close: "Close",
   empty: "Nothing here yet.",
   photos: n => (n === 1 ? "1 photo" : `${n} photos`),
+  endorsements: "Endorsements",
+  readMore: "Read the full endorsement",
 };
 
 // The riding's name in the current language.

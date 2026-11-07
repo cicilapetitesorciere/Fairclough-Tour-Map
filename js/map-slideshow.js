@@ -1,13 +1,16 @@
 // The ambient slideshow. Once the map has been left alone for a few seconds, a random photo on screen
 // grows out of its circle into a card, its picture drifts slowly across, and it shrinks back; then
-// another, and so on. Using the map puts it away. It stays off for anyone who prefers reduced motion.
+// another, and so on. About half the time it shows an endorsement's pull quote instead, growing out of
+// the middle of the riding the endorser belongs to. Using the map puts it away. It stays off for anyone who prefers reduced motion.
 const peek = document.getElementById('peek');
 const peekImg = peek.querySelector('img');
 const peekCaption = peek.querySelector('figcaption');
+const peekQuote = peek.querySelector('.peek-quote');
 
 let lastActive = performance.now();  // when the viewer last used the map
 let shown = null;                    // the photo on show, or null
 let lastShown = null;                // the photo shown most recently, so it isn't picked twice in a row
+let quotes = null;                   // the endorsements the slideshow can show, built on first use
 let showing = 0;                     // bumped to cancel a showing part-way through
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -35,24 +38,45 @@ function pickPhoto(choices) {
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
+// Every endorsement with a pull quote and a riding on the map, placed (like a photo) at its riding's middle.
+function quoteItems() {
+  quotes ??= [...endorsementsByRiding].flatMap(([name, list]) => {
+    const riding = features.find(f => f.properties.name === name);
+    return riding ? list.filter(e => e.excerpt).map(e => ({ riding, quote: e, dx: 0, dy: 0 })) : [];
+  });
+  for (const q of quotes) [q.x, q.y] = path.centroid(q.riding);
+  return quotes;
+}
+
 async function showRandomPhoto() {
   const [w, h] = mapSize();
-  const onScreen = photos.filter(d => {
+  const visible = items => items.filter(d => {
     const [x, y] = photoOnScreen(d);
     return x > 20 && x < w - 20 && y > 100 && y < h - 20;  // not under the search box
   });
+  const photosOnScreen = visible(photos), quotesOnScreen = visible(quoteItems());
+  const wantQuote = Math.random() < SLIDESHOW_QUOTE_CHANCE;
+  const onScreen = (wantQuote && quotesOnScreen.length) || !photosOnScreen.length ? quotesOnScreen : photosOnScreen;
   if (!onScreen.length) return;
   const d = pickPhoto(onScreen.length > 1 ? onScreen.filter(d => d !== lastShown) : onScreen);
   lastShown = d;
   const me = ++showing;
-  peekImg.src = d.url;
-  await peekImg.decode();
+  if (d.quote) {
+    const card = endorsementCard(d.quote, false);
+    peekQuote.replaceChildren(card);
+    await card.querySelector('img')?.decode().catch(() => {});  // the portrait is ready before the card appears
+  } else {
+    peekImg.src = d.url;
+    await peekImg.decode();
+  }
   if (me !== showing || !quiet()) return;
 
   // A card centred on the photo's circle, kept inside the map, growing out of the circle. The last
   // card's finished animations still hold their end state, so they go first.
   peek.getAnimations({ subtree: true }).forEach(a => a.cancel());
   peekCaption.textContent = d.riding.properties.name;
+  peek.classList.toggle('is-quote', !!d.quote);
+  peekQuote.hidden = !d.quote;
   peek.hidden = false;
   const W = peek.offsetWidth, H = peek.offsetHeight;
   const [px, py] = photoOnScreen(d);
@@ -64,7 +88,7 @@ async function showRandomPhoto() {
   const small = { transform: `scale(${(PHOTO_PX * photoScale()) / W})`, opacity: 0 };
   const big = { transform: 'scale(1)', opacity: 1 };
   const shift = Math.random() < 0.5 ? 6 : -6;
-  peekImg.animate([{ transform: `scale(1.18) translateX(${-shift}%)` }, { transform: `scale(1.18) translateX(${shift}%)` }],
+  if (!d.quote) peekImg.animate([{ transform: `scale(1.18) translateX(${-shift}%)` }, { transform: `scale(1.18) translateX(${shift}%)` }],
     { duration: SLIDESHOW_HOLD_MS + 1200, fill: 'both' });
   await peek.animate([small, big], { duration: 550, easing: 'cubic-bezier(.2, .8, .2, 1)', fill: 'both' }).finished;
   await wait(SLIDESHOW_HOLD_MS);

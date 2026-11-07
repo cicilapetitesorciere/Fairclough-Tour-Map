@@ -3,6 +3,9 @@ const info = document.getElementById('info');
 const infoName = document.getElementById('info-name');
 const infoText = document.getElementById('info-text');
 const infoPhotos = document.getElementById('info-photos');
+const infoEndorsements = document.getElementById('info-endorsements');
+const endorsementList = document.getElementById('endorsement-list');
+infoEndorsements.setAttribute('aria-label', T.endorsements);
 
 let infoTimer;
 function cancelPendingInfo() { clearTimeout(infoTimer); }
@@ -26,15 +29,35 @@ function photoFrame(url, name) {
   return frame;
 }
 
+// One endorser: their photo, name and description, a short pull quote, and the full text behind a toggle.
+function endorsementCard(e, withFull = true) {
+  const portrait = e.thumb
+    ? el('img', { class: 'endorsement-photo', src: `endorsements/${e.thumb}`, alt: '', loading: withFull ? 'lazy' : 'eager' })  // the slideshow's card waits for it, off the page
+    : el('span', { class: 'endorsement-photo endorsement-initial', 'aria-hidden': 'true' }, e.name.replace(/^(Hon\.?|Dr\.?)\s+/i, '').charAt(0));
+  const who = el('div', { class: 'endorsement-who' }, el('strong', {}, e.name));
+  if (e.description) who.append(el('span', {}, e.description.replace(/ \| /g, ', ')));
+  const body = el('div', { class: 'endorsement-body' }, who);
+  if (e.excerpt) body.append(el('blockquote', {}, e.excerpt));
+  if (withFull && e.endorsement) {
+    const full = el('div', { class: 'endorsement-full' });
+    full.append(...e.endorsement.split(/\n\n+/).map(p => el('p', {}, p)));
+    body.append(el('details', {}, el('summary', {}, T.readMore), full));
+  }
+  return el('li', { class: 'endorsement' }, portrait, body);
+}
+
 function showInfo(d) {
   const { photos } = d.properties;
   const name = ridingName(d);
   const urls = Array.isArray(photos) ? photos.filter(Boolean) : [];
   infoName.textContent = name;
-  infoText.textContent = d.properties.description || (urls.length ? '' : T.empty);
+  const endorsed = endorsementsByRiding.get(d.properties.name) || [];
+  infoText.textContent = d.properties.description || (urls.length || endorsed.length ? '' : T.empty);
   infoText.hidden = !infoText.textContent;
   infoPhotos.replaceChildren(...urls.map(url => photoFrame(url, name)));
   infoPhotos.hidden = !urls.length;
+  endorsementList.replaceChildren(...endorsed.map(e => endorsementCard(e)));
+  infoEndorsements.hidden = !endorsed.length;
   hideTip();
   info.showModal();
   info.scrollTop = 0;

@@ -20,5 +20,6 @@ const path = d3.geoPath(projection);
 let features = [];                 // riding GeoJSON features
 let shapes = d3.select(null);      // the riding <path>s
 const ridingById = new Map();      // riding number -> feature
+const endorsementsByRiding = new Map();  // riding name -> the endorsements tied to it
 let transform = d3.zoomIdentity;   // the map's current pan and zoom
 let zoomTarget = null;             // the number of the riding the map was zoomed to; null once the viewer moves it
