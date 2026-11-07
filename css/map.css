@@ -41,6 +41,35 @@
 .riding:focus { outline: none; }
 .riding:focus-visible { stroke: #000; stroke-width: 4px; }
 
+.photo-layer { pointer-events: none; }
+.photo circle { fill: var(--card); stroke: rgb(0 0 0 / 0.35); stroke-width: 1px; }
+
+/* The slideshow's card: a photo grown out of its circle on the map, with the riding's name on it. */
+.peek {
+  position: absolute;
+  z-index: 2;
+  width: min(260px, 45%);
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  border: 3px solid var(--card);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.38);
+  cursor: pointer;
+}
+.peek img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.peek figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 22px 12px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  background: linear-gradient(transparent, rgb(0 0 0 / 0.65));
+}
+
 .tip {
   position: absolute;
   pointer-events: none;

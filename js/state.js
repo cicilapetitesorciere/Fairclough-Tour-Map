@@ -11,6 +11,7 @@ const svg = d3.select('#map');
 const g = svg.append('g');
 const contextLayer = g.append('g');                            // neighbouring provinces and states
 const ridingLayer = g.append('g');                             // Ontario's ridings
+const photoLayer = g.append('g').attr('class', 'photo-layer');  // a small round photo for each photo in a riding
 
 // Same Lambert Conformal Conic parameters as Elections Ontario's shapefile.
 const projection = d3.geoConicConformal().rotate([84, 0]).parallels([44.5, 54.5]);

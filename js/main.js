@@ -23,6 +23,7 @@ async function load() {
   indexRidings(geo);
   drawContext(contextGeo);
   drawRidings();
+  drawPhotos();
   layout();
 }
 

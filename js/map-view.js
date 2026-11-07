@@ -23,6 +23,7 @@ function layout() {
   projection.fitExtent([[mx, 60], [w - mx, h - 52]], { type: 'FeatureCollection', features });
   shapes.attr('d', path);
   contextLayer.selectAll('path').attr('d', path);
+  placePhotos();
   zoom.extent([[0, 0], [w, h]]).translateExtent([[0, 0], [w, h]]);
   if (zoomTarget !== null || !middle) return svg.call(zoom.transform, frame(zoomTarget));
   const [x, y] = projection(middle), k = transform.k;
@@ -43,6 +44,7 @@ function zoomed(e) {
   transform = e.transform;
   if (e.sourceEvent) zoomTarget = null;  // the viewer moved the map themselves
   g.attr('transform', transform);
+  scalePhotos();
   const zoomedIn = transform.k > 1.001;
   zoomOutButton.disabled = !zoomedIn;
   zoomInButton.disabled = transform.k > MAX_ZOOM - 0.001;
